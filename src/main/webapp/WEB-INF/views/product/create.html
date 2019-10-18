@@ -6,19 +6,19 @@
 </head>
 <body>
 <h1 class="title" th:text="${message}"></h1>
-<form th:action="@{/save-product}" method="post">
+<form th:action="@{save-product}" th:object="${product}" method="post">
     <table>
         <tr>
             <td>Create Date:</td>
-            <td><input type="text" th:name="id" /></td>
+            <td><input type="text" th:field="*{id}" /></td>
         </tr>
         <tr>
             <td>Name:</td>
-            <td><input type="text" th:name="name"/></td>
+            <td><input type="text" th:field="*{name}"/></td>
         </tr>
         <tr>
             <td>Price:</td>
-            <td><input type="text" th:name="price"/></td>
+            <td><input type="text" th:field="*{price}"/></td>
         </tr>
         <tr>
             <td></td>
